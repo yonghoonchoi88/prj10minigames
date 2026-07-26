@@ -10,7 +10,7 @@ def playDOE():
         else:
             dice_result = "짝"
 
-        user_choice = input("홀/짝 예츨 (홀 또는 짝) : ")
+        user_choice = input("홀/짝 예측 (홀 또는 짝) : ")
         if user_choice != "홀" and user_choice != "짝":
             print("홀 또는 짝 중에 하나만 고르시오.")
             continue
