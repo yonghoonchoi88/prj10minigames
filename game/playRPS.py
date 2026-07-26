@@ -8,6 +8,7 @@ def playRPS():
         answer = "가위" if answer == 1 else "바위" if answer == 2 else "보"
 
         hand = input("가위 바위 보:")
+
         if hand != "가위" and hand != "바위" and hand != "보":
             print("가위, 바위, 보 중에 다시 선택하세요")
         elif hand == answer:
@@ -23,6 +24,7 @@ def playRPS():
             elif hand == "보":
                 result = "컴퓨터승" if answer == "가위" else "유저승"
             print(result)
-        replay = str(input("Press any key to replay (N 입력시 종료)").upper())
+
+        replay = input("Press any key to replay (N 입력시 종료)").upper()
         if replay == "N":
             break
