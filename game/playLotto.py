@@ -33,6 +33,6 @@ def playLotto():
         print(f"내 번호 : {user_list}")
         print(f"{count}/6 번호 일치 -> {result}")
 
-        replay = input("Press any key to replay (N 입력시 종료)").upper()
+        replay = input("Press ENTER to replay (N 입력시 종료)").upper()
         if replay == "N":
             break

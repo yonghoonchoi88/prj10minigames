@@ -21,6 +21,6 @@ def playDOE():
                 result = "오답 ㅠㅠ"
         print(f"주사위 : {dice_number} ({dice_result})\n{result}")
 
-        replay = input("Press any key to replay (N 입력시 종료)").upper()
+        replay = input("Press ENTER to replay (N 입력시 종료)").upper()
         if replay == "N":
             break

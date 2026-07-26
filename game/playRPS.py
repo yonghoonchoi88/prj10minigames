@@ -27,6 +27,6 @@ def playRPS():
                 result = "컴퓨터승" if answer == "가위" else "유저승"
             print(result)
 
-        replay = input("Press any key to replay (N 입력시 종료)").upper()
+        replay = input("Press ENTER to replay (N 입력시 종료)").upper()
         if replay == "N":
             break

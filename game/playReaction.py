@@ -53,7 +53,6 @@ def playReaction():
 
     label.bind("<Button-1>", on_click)
 
-    delay = random.randint(2000, 3000)
-    win.after(delay, turn_green)
+    start_round()
 
     win.mainloop()

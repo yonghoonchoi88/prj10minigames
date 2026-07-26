@@ -25,6 +25,6 @@ def playUpDown():
                     print("Correct!!")
                     break
         print(f"축하합니다! {count}번 만에 맞히셨어요!")
-        replay = input("Press any key to replay (N 입력시 종료)").upper()
+        replay = input("Press ENTER to replay (N 입력시 종료)").upper()
         if replay == "N":
             break
