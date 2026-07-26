@@ -26,20 +26,8 @@ def playLotto():
                 if i == j:
                     count += 1
 
-        if count == 0:
-            result = "꽝"
-        elif count == 1:
-            result = "6등"
-        elif count == 2:
-            result = "5등"
-        elif count == 3:
-            result = "4등"
-        elif count == 4:
-            result = "3등"
-        elif count == 5:
-            result = "2등"
-        else:
-            result = "1등"
+        prize = {0:"꽝", 1:"6등", 2:"5등", 3:"4등", 4:"3등", 5:"2등", 6:"1등"}
+        result = prize[count]
 
         print(f"당첨번호 : {lotto_list}")
         print(f"내 번호 : {user_list}")
