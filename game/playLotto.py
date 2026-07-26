@@ -10,7 +10,11 @@ def playLotto():
 
         for i in range(6):
             while True:
-                number = int(input(f"{i + 1}번째 번호 : "))
+                try:
+                    number = int(input(f"{i + 1}번째 번호 : "))
+                except ValueError:
+                    print("1부터 50까지중에 번호를 고르세요. (중복불가)")
+                    continue
                 if number in user_list:
                     print("중복된 번호에요 다시 입력하세요.")
                 elif number > 50 or number < 1:
