@@ -13,7 +13,7 @@ def playRPS():
             print("가위, 바위, 보 중에 다시 선택하세요")
         elif hand == answer:
             print(f"컴퓨터: {answer} 유저: {hand}")
-            print("비겼습니다! 다시 선택하세요")
+            print("비겼습니다! 다시 플레이하세요")
             continue
 
         elif answer != hand:
