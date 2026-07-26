@@ -4,6 +4,9 @@ from game.playLotto import *
 from game.playDOE import *
 from game.playReaction import *
 
+guide = "1, 2, 3, 4, 5, 0 중 하나를 선택하시오"
+menu_list = {1:playUpDown, 2:playRPS, 3:playLotto, 4:playDOE, 5:playReaction}
+
 while True:
     # 메뉴 출력
     print("==================== Mini Games====================")
@@ -15,12 +18,15 @@ while True:
     print("0. 종료")
 
     # 선택 입력 받기
-    menu = int(input("메뉴 선택 : "))
-    menu_list = {1:playUpDown, 2:playRPS, 3:playLotto, 4:playDOE, 5:playReaction}
+    try:
+        menu = int(input("메뉴 선택 : "))
+    except ValueError:
+        print(guide)
+        continue
     if menu == 0:
         print("==================== Mini Games Ended ====================")
         break
     elif menu in menu_list:
         menu_list[menu]()
     else:
-        print("1, 2, 3, 4, 5, 0 중 하나를 선택하시오")
+        print(guide)
