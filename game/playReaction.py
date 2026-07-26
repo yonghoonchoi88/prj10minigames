@@ -18,7 +18,19 @@ def playReaction():
     )
     label.pack(expand=True, fill="both")
 
-    state = {"ready": False, "start_time": 0}
+    state = {"ready": False, "start_time": 0, "done": False}
+
+    def start_round():
+        state["ready"] = False
+        state["done"] = False
+        label.config(
+            text="빨간색이 초록색으로 바뀌면\n 최대한 빨리 클릭하세요 !!",
+            font=("맑은 고딕", 33),
+            fg="white",
+            bg="red",
+        )
+        delay= random.randint(2000, 3000)
+        win.after(delay, turn_green)
 
     def turn_green():
         state["ready"] = True
@@ -29,16 +41,19 @@ def playReaction():
         if state["ready"]:
             reaction = (time.time() - state["start_time"]) * 1000
             label.config(
-                text=f"반응속도 : {int(reaction)}ms\n\n창을 닫으면 종료됩니다",
+                text=f"반응속도 : {int(reaction)}ms\n다시하려면 화면을 클릭하세요\n창을 닫으면 종료됩니다",
                 bg="blue",
             )
             state["ready"] = False
+            state["done"] = True
+        elif state["done"]:
+            start_round()
         else:
             label.config(text="초록색이 될 때까지 기다리세요", bg="red")
 
     label.bind("<Button-1>", on_click)
 
-    delay = random.randint(2000, 5000)
+    delay = random.randint(2000, 3000)
     win.after(delay, turn_green)
 
     win.mainloop()
