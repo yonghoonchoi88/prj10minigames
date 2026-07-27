@@ -24,7 +24,7 @@ def playUpDown():
             except ValueError:
                 print("숫자 1부터 50까지만 선택 가능합니다.")
                 continue
-
+            break
         print(f"축하합니다! {count}번 만에 맞히셨어요!")
         replay = input("Press ENTER to replay (N 입력시 종료)").upper()
         if replay == "N":
